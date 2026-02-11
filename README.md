@@ -4,8 +4,8 @@ Ce repository public sert uniquement a distribuer les binaires de Minimo.
 
 ## Telechargement
 
-- Windows: [Derniere version](https://github.com/Sillapps/minimo-releases/releases/latest/download/Minimo-0.0.11-Windows-Setup.exe)
-- macOS: [Derniere version](https://github.com/Sillapps/minimo-releases/releases/latest/download/Minimo-0.0.11-macOS.dmg)
+- Windows: [Derniere version](https://github.com/Sillapps/minimo-releases/releases/download/v0.0.11/Minimo-0.0.11-Windows-Setup.exe)
+- macOS: [Derniere version](https://github.com/Sillapps/minimo-releases/releases/download/v0.0.11/Minimo-0.0.11-macOS.dmg)
 
 ## Verifier l'integrite (recommande)
 
