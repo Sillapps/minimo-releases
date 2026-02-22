@@ -1,26 +1,47 @@
 # Minimo Releases
 
-Ce repository public sert uniquement a distribuer les binaires de Minimo.
+Ce repository public distribue les binaires de Minimo et le manifest de mise a jour signe.
 
-## Telechargement
+## Source de verite mise a jour
 
-- Windows: [Derniere version](https://github.com/Sillapps/minimo-releases/releases/download/v0.0.11/Minimo-0.0.11-Windows-Setup.exe)
-- macOS: [Derniere version](https://github.com/Sillapps/minimo-releases/releases/download/v0.0.11/Minimo-0.0.11-macOS.dmg)
+URL stable consommee par l'app:
 
-## Verifier l'integrite (recommande)
+- https://github.com/Sillapps/minimo-releases/releases/latest/download/update-manifest.json
 
-Chaque release contient un fichier `SHA256SUMS.txt`.
+Le manifest doit contenir au minimum:
+
+- `latest`
+- `download_urls.windows`
+- `download_urls.macos`
+- `signature_alg` (ed25519)
+- `signature`
+
+Optionnel:
+
+- `notes_url`
+- `signed_payload`
+
+## Contrat de release
+
+Chaque release doit inclure:
+
+- `Minimo-x.y.z-Windows-Setup.exe` (ou fallback `.zip`)
+- `Minimo-x.y.z-macOS.dmg`
+- `SHA256SUMS.txt`
+- `update-manifest.json`
+
+## Verification integrite (recommande)
 
 Exemple Windows (PowerShell):
 
 ```powershell
-Get-FileHash .\Minimo-Windows-Setup.exe -Algorithm SHA256
+Get-FileHash .\Minimo-x.y.z-Windows-Setup.exe -Algorithm SHA256
 ```
 
 Exemple macOS:
 
 ```bash
-shasum -a 256 Minimo-macOS.dmg
+shasum -a 256 Minimo-x.y.z-macOS.dmg
 ```
 
 Le hash calcule localement doit correspondre a la ligne du fichier `SHA256SUMS.txt`.
@@ -28,4 +49,4 @@ Le hash calcule localement doit correspondre a la ligne du fichier `SHA256SUMS.t
 ## Notes
 
 - Le code source de l'application n'est pas dans ce repository.
-- Les liens sont stables pour permettre la verification de mise a jour dans l'app.
+- Les binaires restent publics; l'integrite du check de version repose sur la signature Ed25519 du manifest.
