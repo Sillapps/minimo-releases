@@ -25,7 +25,7 @@ Optionnel:
 
 Chaque release doit inclure:
 
-- `Minimo-x.y.z-Windows-Setup.exe` (ou fallback `.zip`)
+- `Minimo-x.y.z-Windows-Setup.exe`
 - `Minimo-x.y.z-macOS.dmg`
 - `SHA256SUMS.txt`
 - `update-manifest.json`
